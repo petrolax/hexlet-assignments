@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+# BEGIN
+
+gem 'rack'
+gem 'minitest-power_assert'
+gem 'rubocop'
+gem 'rubocop-minitest'
+
+# END
