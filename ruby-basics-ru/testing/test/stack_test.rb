@@ -18,7 +18,6 @@ class StackTest < Minitest::Test
     assert @stack.empty?
   end
 
-
   def test_push
     @stack.push! 4
     assert(@stack.to_a == [4])
@@ -28,15 +27,15 @@ class StackTest < Minitest::Test
     @stack.push! 1
     assert(@stack.to_a == [1])
     @stack.pop!
-    assert (@stack.to_a == [])
+    assert(@stack.to_a == [])
   end
 
   def test_clear
     @stack.push! 1
     assert(@stack.to_a == [1])
-    assert(@stack.clear!.to_a == [])
+    @stack.clear!
+    assert(@stack.to_a == [])
   end
-  
   # END
 end
 
