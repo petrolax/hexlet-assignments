@@ -36,11 +36,11 @@ class Url
 
     return false if query_params.length != other.query_params.length
 
-    query_params.reduce(true) do |res, (k,v)|
+    query_params.reduce(true) do |res, (k, v)|
       res ||= true
       val = other.query_param(k)
-      break false if val.nil?
-      break false if v != val
+      break false if val.nil? || v != val
+
       res
     end
   end
