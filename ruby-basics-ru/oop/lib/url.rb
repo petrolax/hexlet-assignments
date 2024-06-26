@@ -1,9 +1,12 @@
 # frozen_string_literal: true
+
 require 'uri'
 require 'forwardable'
+
 # BEGIN
 class Url
   attr_accessor :url
+
   extend Forwardable
   def initialize(str)
     @url = URI(str)
@@ -17,7 +20,7 @@ class Url
   end
 
   def query_param(key, val = nil)
-    self.query_params if @qparams.nil? || @qparams.empty?
+    query_params if @qparams.nil? || @qparams.empty?
     res = @qparams[key]
     return val if res.nil?
     res
@@ -25,12 +28,15 @@ class Url
 
   include Comparable
   def ==(other)
-    return false  if self.scheme != other.scheme
-    return false  if self.host != other.host
-    return false  if self.port != other.port
-    return false if self.query_params.length != other.query_params.length
+    return false  if scheme != other.scheme
 
-    self.query_params.reduce(true) do |res, (k,v)|
+    return false  if host != other.host
+
+    return false  if port != other.port
+
+    return false if query_params.length != other.query_params.length
+
+    query_params.reduce(true) do |res, (k,v)|
       res ||= true
       val = other.query_param(k)
       break false if val.nil?
