@@ -10,7 +10,7 @@ class Signature
   def call(env)
     # BEGIN
     status, header, response = @app.call(env)
-    response << "\n#{(Digest::SHA256.hexdigest response[0])}"
+    response << "\n#{Digest::SHA256.hexdigest response[0]}"
     [status, header, response]
     # END
   end
