@@ -1,0 +1,6 @@
+<%# BEGIN %>
+<h1><%= @bulletin.title%></h1>
+<p>Last update at: <%= @bulletin.updated_at.to_datetime.to_date%></p>
+<br>
+<p><%= @bulletin.body %></p>
+<%# END %>

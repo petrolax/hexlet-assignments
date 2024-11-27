@@ -1,0 +1,14 @@
+# test/fixtures/bulletins.yml
+bulletin_1:
+  title: "Bulletin 1"
+  body: "This is the body of Bulletin 1."
+  published: true
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+bulletin_2:
+  title: "Bulletin 2"
+  body: "This is the body of Bulletin 2."
+  published: true
+  created_at: <%= Time.now - 1.day %>
+  updated_at: <%= Time.now - 1.day %>
