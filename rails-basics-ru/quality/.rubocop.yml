@@ -19,4 +19,7 @@ Gemspec/RequiredRubyVersion:
 Metrics/MethodLength:
   Enabled: false
 
+Style/SymbolArray:
+  Enabled: false
+
 # END

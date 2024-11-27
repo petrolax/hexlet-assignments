@@ -9,17 +9,14 @@ class BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal 'text/html; charset=utf-8', response.content_type
 
-
     assert_select 'h1', 'Bulletins'
     assert_select 'h4', 'Bulletin 1'
     assert_select 'h4', 'Bulletin 2'
-
   end
 
   test 'should show article' do
-    bulletin = bulletins(:bulletin_1)
+    bulletin = bulletins(:bulletin1)
     get bulletin_path(bulletin.id)
-
 
     assert_response :success
     assert_equal 'text/html; charset=utf-8', response.content_type
